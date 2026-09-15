@@ -2,7 +2,7 @@ import { useState } from "react";
 import DfaGraph from "./DfaGraph";
 import "./App.css";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://toc-policy-verifier.onrender.com";
 
 function App() {
     const presets = {

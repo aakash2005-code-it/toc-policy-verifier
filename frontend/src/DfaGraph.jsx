@@ -7,7 +7,7 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://toc-policy-verifier.onrender.com";
 
 // simple circular layout so we don't need a heavy layout library
 function layoutNodes(nodes) {
