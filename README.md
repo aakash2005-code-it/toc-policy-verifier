@@ -1,6 +1,8 @@
 ﻿# Formal Password/Input Policy Verifier Using Finite Automata
 
-A Theory of Computation project that treats input-validation policies (e.g., password rules) as formal languages, and **proves** whether a policy is safe against a library of known-weak passwords — instead of testing it against a handful of examples.
+A Theory of Computation project that treats input-validation policies (e.g., password rules) as formal languages, and proves whether a policy is safe against a library of known-weak passwords, instead of testing it against a handful of examples.
+
+Live demo: https://toc-policy-verifier.vercel.app
 
 Built entirely from scratch: no third-party automata libraries. Implements Thompson's construction, subset construction (NFA to DFA), DFA minimization (partition refinement), product construction (intersection/complement), and BFS-based shortest counterexample extraction.
 
@@ -32,16 +34,31 @@ Evaluated against 4 common real-world-style policies: 3 of 4 had a formally prov
 - eval: Benchmark script vs real-world-style policies
 - tests: Step-by-step correctness tests for every pipeline stage
 
+## Live Demo
+
+- App: https://toc-policy-verifier.vercel.app
+- API: https://toc-policy-verifier.onrender.com
+
+Note: the backend is hosted on Render's free tier, which spins down after periods of inactivity. The first request after idle time may take 30-60 seconds to respond while it wakes up.
+
 ## Running locally
 
-Backend:
-npm install
-node api/server.js  (runs on http://localhost:3001)
+Backend (from project root):
 
-Frontend (separate terminal):
-cd frontend
-npm install
-npm run dev  (runs on http://localhost:5173)
+    npm install
+    node api/server.js
+
+Runs on http://localhost:3001
+
+Frontend (in a separate terminal):
+
+    cd frontend
+    npm install
+    npm run dev
+
+Runs on http://localhost:5173
+
+Note: if running locally, update API_BASE in frontend/src/App.jsx and frontend/src/DfaGraph.jsx from the deployed Render URL back to http://localhost:3001.
 
 ## Author
 
